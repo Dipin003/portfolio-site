@@ -1,85 +1,24 @@
-import { AnimatePresence, stagger, motion } from 'framer-motion'
-import React, { useEffect, useState } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { BsGithub, BsInstagram, BsTwitterX } from "react-icons/bs";
+import { FaLinkedin } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
-const LINKS = [
-    { id: 'home', name: 'Home' },
-    { id: 'about', name: 'About' },
-    { id: 'services', name: 'Services' },
-    { id: 'contact', name: 'Contact' }
-]
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false)
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen)
-    }
-
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'auto'
-        }
-    }, [isOpen])
-
-
-    const containerVariants = {
-        hidden: { opacity: 0, y: "-100%" },
-        visible: { opacity: 1, y: 0 },
-        transition: {
-            staggerChildren: 0.2,
-        }
-    }
-
-    const linkVariants = {
-        hidden: { opacity: 0, y: "-50%" },
-        visible: { opacity: 1, y: 0 },
-    }
-
     return (
-        <>
-            <nav className='fixed top-0 right-0 z-30 p-4'>
-                <button onClick={toggleMenu} className='rounded-md p-2'>
-                    {isOpen ? (
-                        <FaTimes className='h-6 w-6' />
-                    ) : (
-                        <FaBars className='h-6 w-6' />
-                    )}
-                </button>
-            </nav>
-            <AnimatePresence>
+        <div className="fixed top-0 left-0 w-full z-50 ">
+            <div className="flex justify-between items-center max-w-screen-xl mx-auto px-10 py-5">
+                <div className="flex gap-6 items-center text-xl text-gray-500">
+                    <a href="#"><BsTwitterX /></a>
+                    <a href="https://github.com/Dipin003" rel="noopener noreferrer" target="_blank"><BsGithub /></a>
+                    <a href="#"><BsInstagram /></a>
+                    <a href="https://in.linkedin.com/in/dipin-kharayat-110b18255" rel="noopener noreferrer" target="_blank"><FaLinkedin /></a>
+                </div>
+                <div className="flex items-center gap-2 text-gray-500">
+                    <MdEmail className="text-xl" />
+                    <p className="text-sm">Get in Touch</p>
+                </div>
+            </div>
+        </div>
+    );
+};
 
-                {isOpen && (
-                    <motion.div
-                        initial="hiddne"
-                        animate="visible"
-                        exit="hidden"
-                        variants={containerVariants}
-
-                        className='fixed inset-0 z-20 flex flex-col items-center justify-center bg-black text-white'>
-                        <ul className='space-y-6 text-3xl'>
-                            {LINKS.map((link) => (
-                                <motion.li
-                                    variants={linkVariants}
-
-                                    key={link.id}>
-                                    <a
-                                        href={`#${link.id}`}
-                                        onClick={toggleMenu}
-                                        className='text-5xl font-semibold uppercase tracking-wide hover:text-lime-300 lg:text-9xl'
-                                    >
-                                        {link.name}
-                                    </a>
-                                </motion.li>
-                            ))}
-                        </ul>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-        </>
-    )
-}
-
-export default Navbar
+export default Navbar;

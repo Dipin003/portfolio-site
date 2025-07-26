@@ -1,27 +1,79 @@
-import React from 'react'
-import { LuImport } from 'react-icons/lu'
-import me from '../assets/me.jpg'
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import assets from "../assets/assets";
+
+const roles = [
+    "<Dipin />",
+    "<Frontend Developer />",
+    "<Backend Developer />",
+    "<Fullstack Developer />",
+];
+
+const container = {
+    hidden: { opacity: 1 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.05,
+        },
+    },
+};
+
+const letter = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
+};
 
 const Hero = () => {
-    return (
-        <div className='flex flex-col items-center justify-center'>
-            <h1 className='mt-16 overflow-hidden text-[12vw] font-semibold uppercase leading-none'>
-                Dipin <br /> Kharayat
-            </h1>
-            <div className='mt-8'>
-                <a href="/Dipin3.docx" target='_blank' rel='noopener noreferrer'
-                download
-                className='flex items-center rounded-xl bg-lime-300 p-2 px-3 font-sans font-medium text-black hover:bg-lime-400'
-                >
-                    <span>Resume</span>
-                    <LuImport className='ml-2'/>
-                </a>
-            </div>
-            <div className='w-full'>
-                <img src={me} alt="my_img" className='mt-8 h-96 w-full object-cover' />
-            </div>
-        </div>
-    )
-}
+    const [roleIndex, setRoleIndex] = useState(0);
+    const [displayText, setDisplayText] = useState(roles[0]);
 
-export default Hero
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setRoleIndex((prev) => (prev + 1) % roles.length);
+            setDisplayText(roles[(roleIndex + 1) % roles.length]);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [roleIndex]);
+
+    return (
+        <div className="h-screen flex flex-col items-center justify-center text-white px-4 relative">
+
+            {/* Circle Container */}
+            <div className="absolute w-[450px] h-[450px] rounded-full border border-gray-100 flex flex-col items-center justify-center text-center p-4 z-0" />
+
+            <img
+                src={assets.me}
+                alt="Dipin"
+                className="w-24 h-24 object-cover rounded-full border border-gray-100 mb-4 z-5"
+            />
+
+            <h1 className=" text-5xl font-bold flex gap-1 flex-wrap justify-center z-5 mt-5">
+                Hey, I'm{" "}
+                <motion.span
+                    key={displayText}
+                    className="text-teal-400 flex"
+                    variants={container}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    {[...displayText].map((char, index) => (
+                        <motion.span key={index} variants={letter}>
+                            {char === " " ? "\u00A0" : char}
+                        </motion.span>
+                    ))}
+                </motion.span>
+            </h1>
+
+            <div className="flex items-center justify-between w-80 mt-10 gap-5 text-gray-500">
+                <a href="#about">ABOUT</a>
+                <a href="#">SKILLS</a>
+                <a href="#">PROJECTS</a>
+                <a href="#">CONTACT</a>
+            </div>
+
+        </div>
+    );
+};
+
+export default Hero;

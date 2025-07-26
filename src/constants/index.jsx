@@ -21,9 +21,6 @@ export const LINKS = [
     { id: "contact", name: "Contact" },
 ];
 
-export const MARQUEE_TEXT =
-    "React, Next.js, Node, MongoDb, Tailwind, MySql, Javascript, Redis,";
-
 export const PROJECTS = [
     {
         id: 1,
@@ -61,7 +58,7 @@ export const PROJECTS = [
 ];
 
 export const ABOUT =
-    "As a dedicated Full Stack Developer, I specialize in creating dynamic and responsive web applications that provide seamless user experiences. With a strong foundation in both front-end and back-end technologies, I excel in building robust and scalable solutions. My expertise includes working with JavaScript frameworks such as React and Node.js, as well as proficiency in databases like MongoDB and SQL. I am passionate about continuous learning and keeping up-to-date with the latest industry trends, which allows me to implement modern practices and tools in my projects.";
+    "Hi there! I'm Dipin, a passionate Full Stack Developer who loves building clean, responsive, and impactful web applications. I specialize in creating seamless user experiences by combining front-end technologies like React with powerful back-end tools such as Node.js. With hands-on experience working with databases like MongoDB and SQL, I ensure every solution is scalable and robust. I'm always eager to learn, grow, and stay updated with the latest trends in tech—because great software is built with both skill and curiosity. Beyond just writing code, I take pride in solving real-world problems through technology, collaborating with cross-functional teams, and delivering high-quality, user-focused digital products. Whether working independently or as part of a team, I thrive on challenges and strive to bring value through innovative and efficient solutions.";
 
 
 export const SOCIAL_MEDIA_LINKS = [
