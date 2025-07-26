@@ -7,10 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        'soft-black': '#1a1a1a', // softer than pure black
+        'soft-black': '#1a1a1a',
       },
+    },
+    screens: {
+      xs: '550px',    // 👈 Now correctly placed inside theme
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
     },
   },
   plugins: [],
 }
-

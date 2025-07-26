@@ -1,27 +1,35 @@
-import assets from '../assets/assets'
-import { ABOUT } from '../constants'
+import assets from '../assets/assets';
+import { ABOUT } from '../constants';
 
 const About = () => {
-
   return (
-    <section id='about' className='w-full h-screen'>
-      <h2 className='my-10 text-center  text-gray-500 text-4xl '
+    <section id="about" className="w-full py-10 bg-black">
+      <h2
+        className="text-center text-gray-500 text-xl xs:text-2xl md:text-3xl font-thin tracking-widest mb-10"
         style={{ letterSpacing: '0.2em' }}
-      >ABOUT</h2>
+      >
+        ABOUT
+      </h2>
 
-      <div className='w-full flex justify-center items-center'>
-        <div className=' mt-10'>
-          <img src={assets.me} alt="dipin_IMG" className='w-[400px] h-[500px] rounded-lg' />
-        </div>
-
-        <div className='w-3/3 flex items-center justify-center'>
-          <p className='m-8 max-w-xl text-2xl text-gray-400'>
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 px-6 md:px-12 lg:px-20">
+        {/* Text Section */}
+        <div className="lg:w-1/2 w-full text-center lg:text-left">
+          <p className="text-sm md:text-lg font-light text-gray-400 leading-relaxed">
             {ABOUT}
           </p>
         </div>
+
+        {/* Image Section */}
+        <div className="lg:w-1/2 w-full flex justify-center">
+          <img
+            src={assets.me}
+            alt="Dipin_IMG"
+            className="w-40 h-40 md:w-60 md:h-60 lg:w-[350px] lg:h-[450px] rounded-full lg:rounded-lg object-cover border border-gray-600"
+          />
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

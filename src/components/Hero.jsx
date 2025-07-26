@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import assets from "../assets/assets";
+import { FaBars } from "react-icons/fa6";
+import { CgClose } from "react-icons/cg";
 
 const roles = [
     "<Dipin />",
@@ -27,32 +29,36 @@ const letter = {
 const Hero = () => {
     const [roleIndex, setRoleIndex] = useState(0);
     const [displayText, setDisplayText] = useState(roles[0]);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setRoleIndex((prev) => (prev + 1) % roles.length);
-            setDisplayText(roles[(roleIndex + 1) % roles.length]);
+            const nextIndex = (roleIndex + 1) % roles.length;
+            setRoleIndex(nextIndex);
+            setDisplayText(roles[nextIndex]);
         }, 3000);
         return () => clearInterval(interval);
     }, [roleIndex]);
 
     return (
-        <div className="h-screen flex flex-col items-center justify-center text-white px-4 relative">
+        <div className="h-screen flex flex-col items-center justify-center text-white px-4 relative overflow-hidden">
 
-            {/* Circle Container */}
-            <div className="absolute w-[450px] h-[450px] rounded-full border border-gray-100 flex flex-col items-center justify-center text-center p-4 z-0" />
+            {/* Circular Border */}
+            <div className="absolute sm:w-[350px] sm:h-[350px] w-[280px] h-[280px] rounded-full border border-gray-100 z-0" />
 
+            {/* Profile Image */}
             <img
                 src={assets.me}
                 alt="Dipin"
-                className="w-24 h-24 object-cover rounded-full border border-gray-100 mb-4 z-5"
+                className="sm:w-24 sm:h-24 w-10 h-10 object-cover rounded-full border border-gray-100 mb-4 z-10"
             />
 
-            <h1 className=" text-5xl font-bold flex gap-1 flex-wrap justify-center z-5 mt-5">
+            {/* Animated Name */}
+            <h1 className="text-xl xs:text-3xl xs:font-bold font-thin flex gap-1 flex-wrap justify-center z-10 mt-5 text-center">
                 Hey, I'm{" "}
                 <motion.span
                     key={displayText}
-                    className="text-teal-400 flex"
+                    className="text-teal-400"
                     variants={container}
                     initial="hidden"
                     animate="visible"
@@ -65,13 +71,31 @@ const Hero = () => {
                 </motion.span>
             </h1>
 
-            <div className="flex items-center justify-between w-80 mt-10 gap-5 text-gray-500">
-                <a href="#about">ABOUT</a>
-                <a href="#">SKILLS</a>
-                <a href="#">PROJECTS</a>
-                <a href="#">CONTACT</a>
+            {/* ✅ Hamburger Menu for below 550px */}
+            <div className="xs:hidden fixed top-4 right-4 z-50">
+                <button onClick={() => setOpen(!open)} className="z-50 relative text-gray-300">
+                    {open ? <CgClose size={24} /> : <FaBars size={24} />}
+                </button>
+
+                {open && (
+                    <div className="fixed inset-0 bg-[#0f0f0f] flex items-center justify-center z-40">
+                        <ul className="flex flex-col gap-6 text-4xl leading-relaxed tracking-wide text-white text-center">
+                            <li><a href="#about" onClick={() => setOpen(false)}>ABOUT</a></li>
+                            <li><a href="#skills" onClick={() => setOpen(false)}>SKILLS</a></li>
+                            <li><a href="#projects" onClick={() => setOpen(false)}>PROJECTS</a></li>
+                            <li><a href="#contact" onClick={() => setOpen(false)}>CONTACT</a></li>
+                        </ul>
+                    </div>
+                )}
             </div>
 
+            {/* ✅ Horizontal Menu for >= 550px */}
+            <ul className="hidden xs:flex xs:items-center xs:justify-between xs:w-80 xs:mt-10 xs:gap-5 text-gray-400 z-20 text-lg">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#">SKILLS</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
         </div>
     );
 };
