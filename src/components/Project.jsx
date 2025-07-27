@@ -3,7 +3,7 @@ import { PROJECTS } from '../constants/index.jsx'
 
 const Project = () => {
     return (
-        <section className='p-8' id='projects'>
+        <section  className='p-8' id='projects'>
             <h2 className='my-10 text-center text-3xl lg:text-6xl font-bold'>Projects</h2>
 
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6'>

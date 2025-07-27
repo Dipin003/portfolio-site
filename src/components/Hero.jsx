@@ -92,8 +92,8 @@ const Hero = () => {
             {/* ✅ Horizontal Menu for >= 550px */}
             <ul className="hidden xs:flex xs:items-center xs:justify-between xs:w-80 xs:mt-10 xs:gap-5 text-gray-400 z-20 text-lg">
                 <li><a href="#about">ABOUT</a></li>
-                <li><a href="#">SKILLS</a></li>
-                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
                 <li><a href="#">CONTACT</a></li>
             </ul>
         </div>
