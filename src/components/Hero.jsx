@@ -43,17 +43,15 @@ const Hero = () => {
     return (
         <div className="h-screen flex flex-col items-center justify-center text-white px-4 relative overflow-hidden">
 
-            {/* Circular Border */}
+
             <div className="absolute sm:w-[350px] sm:h-[350px] w-[280px] h-[280px] rounded-full border border-gray-100 z-0" />
 
-            {/* Profile Image */}
             <img
                 src={assets.me}
                 alt="Dipin"
                 className="sm:w-24 sm:h-24 w-10 h-10 object-cover rounded-full border border-gray-100 mb-4 z-10"
             />
 
-            {/* Animated Name */}
             <h1 className="text-xl xs:text-3xl xs:font-bold font-thin flex gap-1 flex-wrap justify-center z-10 mt-5 text-center">
                 Hey, I'm{" "}
                 <motion.span
@@ -94,7 +92,7 @@ const Hero = () => {
                 <li><a href="#about">ABOUT</a></li>
                 <li><a href="#skills">SKILLS</a></li>
                 <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </div>
     );

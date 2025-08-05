@@ -9,10 +9,10 @@ import {
     FaInstagram,
 } from "react-icons/fa6";
 
-import textToimage from "../assets/textTOimage.jpg"
-import chatApp from "../assets/chatApp.jpg"
-import netflixReplica from "../assets/netflixReplica.jpg"
-import imageEnhancer from "../assets/imageEnhancer.jpg"
+import textToimage from "../assets/textToImage.png"
+import chatApp from "../assets/chatting.png"
+import netflixReplica from "../assets/netflixC.png"
+import imageEnhancer from "../assets/imageEnhance.png"
 
 export const LINKS = [
     { id: "projects", name: "projects" },

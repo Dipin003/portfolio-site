@@ -13,8 +13,10 @@ const Navbar = () => {
                     <a href="https://in.linkedin.com/in/dipin-kharayat-110b18255" rel="noopener noreferrer" target="_blank"><FaLinkedin /></a>
                 </div>
                 <div className="hidden xs:flex items-center gap-2 text-gray-500">
-                    <MdEmail className="text-xl" />
+                    <a href="#contact" className="flex gap-2">
+                    <MdEmail className="text-xl cursor-pointer" />
                     <p className="text-sm">Get in Touch</p>
+                    </a>
                 </div>
             </div>
         </div>
