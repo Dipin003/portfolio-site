@@ -11,15 +11,15 @@ import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
-  const [loading, setLoading] = useState(true)
+  // const [loading, setLoading] = useState(true)
 
   return (
     
     <main className='font-light antialiased bg-soft-black'>
       <ToastContainer />
-      {loading ? (
+      {/* {loading ? (
         <Loader onComplete={() => setLoading(false)} />
-      ) : (
+      ) : ( */}
         <>
           <Navbar />
           <Hero />
@@ -28,7 +28,7 @@ const App = () => {
           <Project />
           <Contact />
         </>
-      )}
+      {/* )} */}
     </main>
   )
 }
