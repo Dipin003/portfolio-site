@@ -27,12 +27,24 @@ const floatTransition = {
 const Skills = () => {
   return (
     <div id='skills' className='max-h-screen w-full py-10 px-4'>
-      <h2
-        className="text-center text-gray-500 text-xl xs:text-2xl md:text-3xl font-thin tracking-widest mb-10"
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.1 }}
+        transition={{ duration: 1 }}
+
+        className=" text-center text-gray-500 text-xl xs:text-2xl md:text-3xl font-thin tracking-widest mb-10"
         style={{ letterSpacing: '0.2em' }}
       >
         Skills
-      </h2>
+        <motion.span
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 1, delay: 0.1, ease: "easeInOut" }}
+          viewport={{ once: false, amount: 0.2 }}
+          className="block mx-auto mt-2 h-[1px] w-40 sm:w-[500px] bg-gray-500 origin-center"
+        />
+      </motion.h2>
 
       <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 max-w-5xl mx-auto">
         {skills.map((skill, index) => (

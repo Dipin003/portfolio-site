@@ -28,7 +28,10 @@ export const PROJECTS = [
         description:
             "A full-featured e-commerce website built with React and Node.js.",
         imgSrc: textToimage,
-        link: "https://example.com/ecommerce-website",
+        live: true,
+        link: "https://pixoradev.vercel.app/",
+        github: "https://github.com/Dipin003/TextToImage"
+
     },
     {
         id: 2,
@@ -37,25 +40,21 @@ export const PROJECTS = [
             "A social media application with real-time chat and notifications.",
         imgSrc: chatApp,
         link: "https://example.com/social-media-app",
+        live: false,
+        github: "https://github.com/Dipin003/ChattingAppMern"
     },
     {
         id: 3,
-        title: "Netflix Replica",
-        description:
-            "A personal portfolio website to showcase projects and skills.",
-        imgSrc: netflixReplica,
-        link: "https://example.com/portfolio-website",
-    },
-    {
-        id: 4,
         title: "Image Enhancer",
         description:
             "A blogging platform with user authentication and content management.",
         imgSrc: imageEnhancer,
         link: "https://example.com/blog-platform",
+        live: false,
+        github: "https://github.com/Dipin003/ImageEnhancer"
     },
-
 ];
+
 
 export const ABOUT =
     "Hi there! I'm Dipin, a passionate Full Stack Developer who loves building clean, responsive, and impactful web applications. I specialize in creating seamless user experiences by combining front-end technologies like React with powerful back-end tools such as Node.js. With hands-on experience working with databases like MongoDB and SQL, I ensure every solution is scalable and robust. I'm always eager to learn, grow, and stay updated with the latest trends in tech—because great software is built with both skill and curiosity. Beyond just writing code, I take pride in solving real-world problems through technology, collaborating with cross-functional teams, and delivering high-quality, user-focused digital products. Whether working independently or as part of a team, I thrive on challenges and strive to bring value through innovative and efficient solutions.";
