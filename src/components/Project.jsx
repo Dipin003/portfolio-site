@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Project = () => {
     return (
         <section
-            className="px-6 py-16 bg-gradient-to-br from-black via-gray-900 to-cyan-900 rounded-tl-[500px] rounded-br-[500px] rounded-tr-[10px] rounded-bl-[10px] dark:bg-gradient-to-br dark:from-black dark:via-gray-900 dark:to-cyan-900"
+            className="px-6 py-16 bg-gradient-to-br from-black via-gray-900 to-cyan-900 rounded-tl-[500px] rounded-br-[500px] rounded-tr-[10px] rounded-bl-[10px] dark:bg-gradient-to-br mt-5 dark:from-black dark:via-gray-900 dark:to-cyan-900"
             id="projects"
         >
             <motion.h2
@@ -77,7 +77,7 @@ const Project = () => {
                                     className="mt-6"
                                 >
                                     <a
-                                        href={project.github} 
+                                        href={project.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >

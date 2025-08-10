@@ -24,9 +24,8 @@ export const LINKS = [
 export const PROJECTS = [
     {
         id: 1,
-        title: "Text To Image Generator",
-        description:
-            "A full-featured e-commerce website built with React and Node.js.",
+        title: "Pixora - AI Image Generator",
+        description: "Pixora is an AI-powered web app that instantly transforms text prompts into high-quality images. Built with React, Node.js, and Tailwind CSS for a seamless experience.",
         imgSrc: textToimage,
         live: true,
         link: "https://pixoradev.vercel.app/",
@@ -35,9 +34,8 @@ export const PROJECTS = [
     },
     {
         id: 2,
-        title: "Chatting Application",
-        description:
-            "A social media application with real-time chat and notifications.",
+        title: "TalkSync",
+        description: "TalkSync is a real-time chat app showing online users and enabling instant messaging, with multiple themes for a personalized experience. Built with React, Node.js, and Socket.io.",
         imgSrc: chatApp,
         link: "https://example.com/social-media-app",
         live: false,
@@ -46,8 +44,8 @@ export const PROJECTS = [
     {
         id: 3,
         title: "Image Enhancer",
-        description:
-            "A blogging platform with user authentication and content management.",
+        description: "A simple app that enhances images quickly and easily using the power of AI. Built with React and Tailwind CSS.",
+
         imgSrc: imageEnhancer,
         link: "https://example.com/blog-platform",
         live: false,
