@@ -81,9 +81,11 @@ const Project = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <button className="w-full px-5 py-2 text-white rounded-md text-sm font-medium hover:bg-teal-800 transition-colors duration-300 dark:bg-teal-600 dark:hover:bg-teal-700">
+                                        <button className="w-full px-5 py-2 text-white rounded-md text-sm font-medium bg-gradient-to-r from-cyan-900 via-teal-800 to-emerald-700 hover:from-cyan-800 hover:via-teal-700 hover:to-emerald-600 transition-colors duration-300 dark:bg-gradient-to-r dark:from-emerald-300 dark:to-teal-400 dark:text-black dark:hover:from-emerald-200 dark:hover:to-teal-300">
                                             View Project
                                         </button>
+
+
                                     </a>
                                 </motion.div>
                             </div>
