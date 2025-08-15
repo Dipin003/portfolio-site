@@ -83,10 +83,6 @@ const Navbar = () => {
                     animate="animate"
                     className="flex gap-3 xs:gap-6 items-center text-sm xs:text-lg sm:text-xl"
                 >
-                    <motion.a variants={itemVariants} href="#" transition={{ duration: 1 }}>
-                        <BsTwitterX />
-                    </motion.a>
-
                     <motion.a
                         variants={itemVariants}
                         href="https://github.com/Dipin003"
