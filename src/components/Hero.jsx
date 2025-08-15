@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import assets from "../assets/assets";
 import { FaBars } from "react-icons/fa6";
 import { CgClose } from "react-icons/cg";
+import { FaDownload } from "react-icons/fa";
 
 const roles = [
     "<Dipin />",
@@ -154,6 +155,27 @@ const Hero = () => {
                     </motion.li>
                 ))}
             </motion.ul>
+
+
+            {/* Resume Button */}
+            <motion.div
+                className="absolute bottom-20 z-50 flex items-center justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.2 }}
+            >
+                <a
+                    href="/Dipin3.pdf"
+                    download
+                    className="flex items-center gap-3 px-6  py-2 bg-lime-500 text-black text-sm  rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+                >
+                    <FaDownload size={20} />
+                    Resume
+                </a>
+
+            </motion.div>
+
+
         </div>
     );
 };

@@ -55,8 +55,12 @@ const Navbar = () => {
         animate: {
             y: 0,
             opacity: 1,
-            transition: { duration: 0.6, ease: "easeOut" },
+            transition: { duration: 0.6, ease: "easeOut" }
         },
+        hover: {
+            scale: 1.2,
+            transition: { duration: 0.2, ease: "easeOut" }
+        }
     };
 
     const getInTouchVariants = {
@@ -81,11 +85,13 @@ const Navbar = () => {
                     variants={containerVariants}
                     initial="initial"
                     animate="animate"
+
                     className="flex gap-3 xs:gap-6 items-center text-sm xs:text-lg sm:text-xl"
                 >
                     <motion.a
                         variants={itemVariants}
                         href="https://github.com/Dipin003"
+                        whileHover="hover"
                         target="_blank"
                         rel="noopener noreferrer"
                         transition={{ duration: 1 }}
@@ -95,6 +101,7 @@ const Navbar = () => {
 
                     <motion.a
                         variants={itemVariants}
+                        whileHover="hover"
                         href="https://www.instagram.com/dipinkharayat_03?igsh=MWo4ajdqaXZmcWc4bQ=="
                         target="_blank"
                         rel="noopener noreferrer"
@@ -105,6 +112,8 @@ const Navbar = () => {
 
                     <motion.a
                         variants={itemVariants}
+                        whileHover="hover"
+
                         href="https://in.linkedin.com/in/dipin-kharayat-110b18255"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -115,9 +124,12 @@ const Navbar = () => {
                 </motion.div>
 
                 <motion.div
+                    whileHover="hover"
                     variants={getInTouchVariants}
+
                     initial="initial"
                     animate="animate"
+
                     className="hidden xs:flex items-center gap-2"
                 >
                     <a href="#contact" className="flex gap-2">
